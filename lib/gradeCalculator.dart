@@ -5,7 +5,7 @@ class gradeCalculator {
     } else if (gradePercentage == 0) {
       return "F";
     }else {
-      return "E";
+      return "Not valid grade";
     }
   }
 }
