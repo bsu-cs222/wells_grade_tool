@@ -7,5 +7,10 @@ void main() {
     String expectLetterGrade = calculator.convertGrade(100);
     expect(expectLetterGrade, "A");
   });
+  test('0 is an F', () {
+    gradeCalculator calculator = gradeCalculator();
+    String expectLetterGrade = calculator.convertGrade(0);
+    expect(expectLetterGrade, "F");
+  });
 }
 
