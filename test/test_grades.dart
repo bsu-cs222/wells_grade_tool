@@ -15,5 +15,9 @@ void main() {
     String expectLetterGrade = calculator.convertGrade(85);
     expect(expectLetterGrade, "B");
   });
+  test('75 is an C', () {
+    String expectLetterGrade = calculator.convertGrade(75);
+    expect(expectLetterGrade, "C");
+  });
 }
 
