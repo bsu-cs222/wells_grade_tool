@@ -1,13 +1,17 @@
 class gradeCalculator {
   String convertGrade(int gradePercentage) {
-    if (gradePercentage > 89 && gradePercentage < 101) {
+    if (_gradeIsBetween(gradePercentage, 101, 89)) {
       return "A";
-    } else if (gradePercentage > 79 && gradePercentage < 90) {
+    } else if (_gradeIsBetween(gradePercentage, 90, 79)) {
       return "B";
-    }else if (gradePercentage == 0) {
+    }else if (_gradeIsBetween(gradePercentage, 60, -1)) {
       return "F";
     } else {
       return "Not valid grade";
     }
   }
+}
+
+bool _gradeIsBetween(int gradePercentage, int highGrade, int lowGrade){
+  return gradePercentage > lowGrade && gradePercentage < highGrade;
 }
