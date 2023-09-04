@@ -1,4 +1,5 @@
 class gradeCalculator {
+  // This converts a grade percentage into a letter grade
   String convertGrade(int gradePercentage) {
     if (_gradeIsBetween(gradePercentage, 101, 89)) {
       return "A";
@@ -16,6 +17,7 @@ class gradeCalculator {
   }
 }
 
+// This checks if the grade percentage is less than the high grade and more than the low grade
 bool _gradeIsBetween(int gradePercentage, int highGrade, int lowGrade){
   return gradePercentage > lowGrade && gradePercentage < highGrade;
 }

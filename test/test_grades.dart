@@ -1,3 +1,4 @@
+// Destiny Wells - September 4 2023
 import 'package:flutter_test/flutter_test.dart';
 import 'package:wells_gradetool/gradeCalculator.dart';
 
@@ -8,21 +9,10 @@ void main() {
     return calculator.convertGrade(inputGrade);
   }
 
-  test('100 is an A', () {
+  test('Test grade for grade calculator', () {
     expect(testResultFor(100), "A");
-  });
-
-  test('0 is an F', () {
-     expect(testResultFor(0), "F");
-  });
-  test('85 is an B', () {
-    expect(testResultFor(85), "B");
-  });
-
-  test('75 is an C', () {
+    expect(testResultFor(0), "F");
     expect(testResultFor(75), "C");
-  });
-  test('65 is an C', () {
     expect(testResultFor(65), "D");
   });
 }
