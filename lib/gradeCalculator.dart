@@ -4,6 +4,8 @@ class gradeCalculator {
       return "A";
     } else if (_gradeIsBetween(gradePercentage, 90, 79)) {
       return "B";
+    }else if (_gradeIsBetween(gradePercentage, 80, 69)) {
+      return "C";
     }else if (_gradeIsBetween(gradePercentage, 60, -1)) {
       return "F";
     } else {
