@@ -22,5 +22,8 @@ void main() {
   test('75 is an C', () {
     expect(testResultFor(75), "C");
   });
+  test('65 is an C', () {
+    expect(testResultFor(65), "D");
+  });
 }
 
