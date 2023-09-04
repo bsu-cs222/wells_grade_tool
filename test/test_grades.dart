@@ -3,21 +3,24 @@ import 'package:wells_gradetool/gradeCalculator.dart';
 
 void main() {
   gradeCalculator calculator = gradeCalculator();
+
+  String testResultFor(int inputGrade){
+    return calculator.convertGrade(inputGrade);
+  }
+
   test('100 is an A', () {
-    String expectLetterGrade = calculator.convertGrade(100);
-    expect(expectLetterGrade, "A");
+    expect(testResultFor(100), "A");
   });
+
   test('0 is an F', () {
-    String expectLetterGrade = calculator.convertGrade(0);
-    expect(expectLetterGrade, "F");
+     expect(testResultFor(0), "F");
   });
   test('85 is an B', () {
-    String expectLetterGrade = calculator.convertGrade(85);
-    expect(expectLetterGrade, "B");
+    expect(testResultFor(85), "B");
   });
+
   test('75 is an C', () {
-    String expectLetterGrade = calculator.convertGrade(75);
-    expect(expectLetterGrade, "C");
+    expect(testResultFor(75), "C");
   });
 }
 
