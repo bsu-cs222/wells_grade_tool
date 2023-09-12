@@ -1,4 +1,4 @@
-# wells_gradetool
+# wells_grade_tool
 
 CS222
 
