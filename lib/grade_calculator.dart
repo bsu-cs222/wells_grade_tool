@@ -1,5 +1,4 @@
 class gradeCalculator {
-  // This converts a grade percentage into a letter grade
   String convertGrade(int gradePercentage) {
     if (gradePercentage >= 90) {
       return "A";
