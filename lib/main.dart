@@ -27,6 +27,7 @@ class MyCustomForm extends StatefulWidget {
 class _MyCustomFormState extends State<MyCustomForm> {
   final TextEditingController _numberController = TextEditingController();
   gradeCalculator calculator = gradeCalculator();
+  String _resultMessage = "";
 
   @override
   void dispose() {
@@ -34,30 +35,38 @@ class _MyCustomFormState extends State<MyCustomForm> {
     super.dispose();
   }
 
+  void callConvertGrade(){
+    setState(() {
+      String grade = calculator.convertGrade(int.parse(_numberController.text));
+      _resultMessage = 'Your grade is $grade';
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Grade Converter'),
+        title: const Text('Grade Converter Tool'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16),
-        child: TextField(
-          controller: _numberController,
+      body: Center(
+        child: Column(
+          children: [
+            TextField(
+              controller: _numberController,
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: 'Enter your numeric grade percentage',
+              ),
+            ),
+            ElevatedButton(onPressed: (){
+              callConvertGrade();
+            }, child: const Text('Press here to see your grade!')
+            ),
+            SizedBox(
+              child: Text(_resultMessage),
+            )
+          ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          showDialog(
-            context: context,
-            builder: (context) {
-              return AlertDialog(
-                content: Text('This is a ' + calculator.convertGrade(int.parse(_numberController.text))),
-              );
-            },
-          );
-        },
-        child: const Icon(Icons.east_sharp),
       ),
     );
   }
